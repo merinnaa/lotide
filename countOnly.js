@@ -1,26 +1,31 @@
-const assertEqual = function(actual, expected) {
-  if (typeof actual === "number" && typeof expected === "number")
-    if (actual !== expected) {
-      console.log(assertEqual);
-    }
-  return actual === expected;
+const assertEqual = function(allItems, itemsToCount) {
+  //if (typeof actual === "number" && typeof expected === "number")// print if the two nubers are nubers only
+  if (allItems !== itemsToCount) {
+    console.log(`Assertion Failed: ${allItems} !== ${itemsToCount}`);
+  } else {
+    console.log(`Assertion passed: ${allItems} === ${itemsToCount}`);
+  }
 };
+
 //assertEqual("lighthouse", "Bootcamp");
 //assertEqual(1, 1);
-//console.assert();
 
 const countOnly = function(allItems, itemsToCount) {
   let results = {};
   for (let item of allItems) {
-    results = item++;
-    console.log(item);
     
-    if (item = 0, item <= itemsToCount, item++) {
-      return item;
+    if (itemsToCount[item]) {
+      if (results[item]) {
+        results[item] += 1;
+      } else {
+        results[item] = 1;
+        
+      }
     }
   }
   return results;
 };
+
 const firstNames = [
   "Karl",
   "Salima",
@@ -38,4 +43,4 @@ assertEqual(result1["Jason"], 1);
 assertEqual(result1["Karima"], undefined);
 assertEqual(result1["Fang"], 2);
 assertEqual(result1["Agouhanna"], undefined);
-
+console.log(result1);
