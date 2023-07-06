@@ -1,15 +1,10 @@
 const assertEqual = function(allItems, itemsToCount) {
-  //if (typeof actual === "number" && typeof expected === "number")// print if the two nubers are nubers only
   if (allItems !== itemsToCount) {
     console.log(`Assertion Failed: ${allItems} !== ${itemsToCount}`);
   } else {
     console.log(`Assertion passed: ${allItems} === ${itemsToCount}`);
   }
 };
-
-//assertEqual("lighthouse", "Bootcamp");
-//assertEqual(1, 1);
-
 const countOnly = function(allItems, itemsToCount) {
   let results = {};
   for (let item of allItems) {

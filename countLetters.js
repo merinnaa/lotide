@@ -1,18 +1,27 @@
 const assertEqual = function(actual, expected) {
-  if (actual !== expected) {
-    console.log(`Assertion Failed: ${actual} !== ${expected}`);
+  if (actual === expected) {
+    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
   } else {
-    console.log(`Assertion passed: ${actual} === ${expected}`);
+    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
   }
 };
-const letterPositions = function(sentence) {
-  const results = {};
-  
-  return results;
+const countLetters = function(sentence) {
+  const letterCount = {};
+
+  for (const letter of sentence) {
+    if (letter !== ' ') {
+      if (letterCount[letter]) {
+        letterCount[letter] += 1;
+      } else {
+        letterCount[letter] = 1;
+      }
+    }
+  }
+
+  return letterCount;
 };
+const result1 = countLetters("LHL");
+console.log(result1);
 
-
-const result = letterPositions("lighthouse in the house");
-assertEqual(letterPositions("lighthouse in the house").e, [1]);
-assertEqual(result["l"], 1);
-assertEqual(result["h"], 4);
+const result2 = countLetters("Hello World");
+console.log(result2);
