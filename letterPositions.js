@@ -1,33 +1,40 @@
-const assertEqual = function(actual, expected) {
-  if (actual !== expected) {
-    console.log(`Assertion Failed: ${actual} !== ${expected}`);
+const assertArraysEqual = function(actual, expected) {
+  if (eqArrays(actual, expected)) {
+    console.log(`✅✅✅ Assertion Passed: ${actual} === ${expected}`);
   } else {
-    console.log(`Assertion passed: ${actual} === ${expected}`);
+    console.log(`🛑🛑🛑 Assertion Failed: ${actual} !== ${expected}`);
   }
 };
-// const countLetters = function(numberOfLetters) {
-//   let result = {};
 
-//   for (let i = 0; i <= numberOfLetters.length; i++) {
-//     // for (let letter in numberOfLetters) {
-//       if (countLetters(numberOfLetters[i]), letter) {
-//         result.push(i);
-//       }
-//       //     result[i] = 1;
-//       //   }
-//       //   console.log(numberOfLetters[i] + " " + [i]);
-//       // }
+const eqArrays = function(arr1, arr2) {
+  if (arr1.length !== arr2.length) {
+    return false;
+  }
+  for (let i = 0; i < arr1.length; i++) {
+    if (arr1[i] !== arr2[i]) {
+      return false;
+    }
+  }
+  return true;
+};
+const letterPositions = function(sentence) {
+  const results = {};
 
-//       for (let letter in result) {
-//         console.log(`Letter '${numberOfLetters}': ${result[letter]} occurrences`);
-//       }
-//       return result;
-//     }
-//   }
+  for (let i = 0; i < sentence.length; i++) {
+    const letter = sentence[i];
+    if (letter !== ' ') {
+      if (results[letter]) {
+        results[letter].push(i);
+      } else {
+        results[letter] = [i];
+      }
+    }
+  }
 
-// //};
-// const result = countLetters("lighthouse in the house");
-// //  console.log(eqArrays([1, 2, 3], [1, 2, 3])); // true
-// //  console.log(eqArrays([1, 2, 3], [3, 2, 1])); // false
-// //  console.log(eqArrays(["1", "2", "3"], ["1", "2", "3"])); // true
-// //  console.log(eqArrays(["1", "2", "3"], ["1", "2", 3]));
+  return results;
+};
+const result = letterPositions("hello");
+assertArraysEqual(result['h'], [0]);
+assertArraysEqual(result['e'], [1]);
+assertArraysEqual(result['l'], [2, 3]);
+assertArraysEqual(result['o'], [4]);
