@@ -1,9 +1,13 @@
 const tail = function(array) {
   if (array.length === 0) {
-    return undefined;
+    return [];
   }
+  
+
   for (let i = 1; i <= array.length; i++) {
-    return array[i];
+   
+    return array.slice(1);
+
   }
 };
 //console.log();
