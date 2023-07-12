@@ -1,7 +1,3 @@
-// const tail = require('../tail');
-// const assertEqual = require('../assertEqual');
-// const result = tail(["Hello", "Lighthouse", "Labs"]);
-// assertEqual(result, ["Lighthouse", "Labs"]);
 const tail = require('../tail');
 const assert = require('chai').assert;
 

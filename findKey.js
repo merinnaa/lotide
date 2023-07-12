@@ -26,7 +26,6 @@ const assertEqual = function(actual, expected) {
     console.error('Assertion failed:', actual, 'does not equal', expected);
   }
 };
-
-
 assertEqual("Lighthouse Labs", "Bootcamp");
 assertEqual(1, 1);
+module.exports = findKey;
