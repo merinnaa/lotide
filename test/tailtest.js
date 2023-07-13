@@ -1,6 +1,7 @@
 const tail = require('../tail');
 const assert = require('chai').assert;
 
+// Test case
 
 describe('tail', () => {
   it('returns the tail of an array with multiple elements', () => {

@@ -1,7 +1,5 @@
+// middle function implementation
 
-const eqArrays = require('../eqArrays');
-
-const assertArraysEqual = require('../assertArraysEqual');
 const  middle = function(array) {
   const length = array.length;
   const middleIndex = Math.floor(length / 2);
@@ -14,4 +12,5 @@ const  middle = function(array) {
     return [array[middleIndex - 1], array[middleIndex]];
   }
 };
+
 module.exports =  middle;

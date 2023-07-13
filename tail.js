@@ -1,5 +1,4 @@
-const assertEqual = require('../assertEqual');
-const assert = require('assert');
+// tail function implementation
 const tail = function(array) {
   if (array.length === 0) {
     return [];
@@ -12,4 +11,5 @@ const tail = function(array) {
 
   }
 };
+
 module.exports = tail;

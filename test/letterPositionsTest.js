@@ -1,7 +1,24 @@
+const assert = require('chai').assert;
 const letterPositions = require('../letterPositions');
-const assertArraysEqual = require('../assertArraysEqual');
-const result = letterPositions("hello");
-assertArraysEqual(result['h'], [0]);
-assertArraysEqual(result['e'], [1]);
-assertArraysEqual(result['l'], [2, 3]);
-assertArraysEqual(result['o'], [4]);
+
+// Test case
+
+describe('letterPositions', () => {
+  const result = letterPositions("hello");
+
+  it('should return the correct positions for letter "h"', () => {
+    assert.deepEqual(result['h'], [0]);
+  });
+
+  it('should return the correct positions for letter "e"', () => {
+    assert.deepEqual(result['e'], [1]);
+  });
+
+  it('should return the correct positions for letter "l"', () => {
+    assert.deepEqual(result['l'], [2, 3]);
+  });
+
+  it('should return the correct positions for letter "o"', () => {
+    assert.deepEqual(result['o'], [4]);
+  });
+});

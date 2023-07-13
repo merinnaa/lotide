@@ -1,5 +1,5 @@
-const assertArraysEqual = require('../const assertArraysEqual');
-const eqArrays = require('../eqArrays');
+// takeUnit function implementation
+
 const takeUntil = function(array, callback) {
   const results = [];
   for (let item of array) {

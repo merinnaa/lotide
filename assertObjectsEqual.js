@@ -1,12 +1,10 @@
-const eqObjects = require('../eqObject');
-const eqArrays = require('../aqArrays');
-const assertObjectsEqual = function(actual, expected) {
-  const inspect = require('util').inspect;
+const assert = require('chai').assert;
+const inspect = require('util').inspect;
 
-  if (eqObjects(actual, expected)) {
-    console.log(`✅✅✅ Assertion Passed: ${inspect(actual)} === ${inspect(expected)}`);
-  } else {
-    console.log(`🛑🛑🛑 Assertion Failed: ${inspect(actual)} !== ${inspect(expected)}`);
-  }
+// assertObjectsEqual function implementation
+
+const assertObjectsEqual = function(actual, expected) {
+  assert.deepEqual(actual, expected, `🛑 Assertion Failed: ${inspect(actual)} !== ${inspect(expected)}`);
+  console.log(`✅ Assertion Passed: ${inspect(actual)} === ${inspect(expected)}`);
 };
 module.exports = assertObjectsEqual;

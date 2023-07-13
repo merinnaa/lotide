@@ -2,6 +2,7 @@ const assert = require('chai').assert;
 const middle   = require('../middle');
 
 // Testing the middle function
+
 describe('middle', () => {
   it('returns an empty array for an array with less than 3 elements', () => {
     assert.deepEqual(middle([1]), []);

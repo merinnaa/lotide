@@ -1,5 +1,4 @@
-const assertArraysEqual = require('../assertArraysEqual');
-const eqArrays = require('../eqArrays');
+// without function implementation
 const without = function(source, itemsToRemove) {
   const newArray = [];
   for (let element of source) {

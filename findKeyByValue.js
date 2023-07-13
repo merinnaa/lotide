@@ -1,4 +1,7 @@
-const assertEqual = require('../assertEqual');
+const assertEqual = require('./assertEqual');
+
+// findKeyByValue function implementation
+
 const findKeyByValue = function(object, value) {
   for (const key in object) {
     // eslint-disable-next-line no-prototype-builtins
@@ -8,13 +11,5 @@ const findKeyByValue = function(object, value) {
   }
   return undefined;
 };
-const bestTVShowsByGenre = {
-  // eslint-disable-next-line camelcase
-  sci_fi: "The Expanse",
-  comedy: "Brooklyn Nine-Nine",
-  drama:  "The Wire"
-};
 
-assertEqual(findKeyByValue(bestTVShowsByGenre, "The Wire"), "drama");
-assertEqual(findKeyByValue(bestTVShowsByGenre, "That '70s Show"), undefined);
 module.exports = findKeyByValue;
